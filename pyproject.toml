@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "probelpangolin"
+version = "0.1.0"
+description = "SW-P-08 (Pro-Bel General Remote Control Protocol) for Python: control a router, read its crosspoints and names, trace every frame, simulate a router. The library behind Probel Pangolin."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Marcus Mathy" }]
+keywords = ["broadcast", "router", "matrix", "kreuzschiene", "sw-p-08", "probel", "snell", "grass valley"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+probelpangolin = "probelpangolin.__main__:main"
+
+[tool.setuptools]
+packages = ["probelpangolin"]
+
+[tool.setuptools.package-data]
+probelpangolin = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
